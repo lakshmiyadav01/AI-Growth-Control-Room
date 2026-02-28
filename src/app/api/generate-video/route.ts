@@ -35,6 +35,11 @@ function constructSystemPrompt(userPrompt: string, charCount: number, ratio: str
 
 export async function POST(request: Request) {
     try {
+        const apiKey = process.env.GEMINI_API_KEY || process.env.API_KEY || "";
+        if (!apiKey) {
+            return NextResponse.json({ error: "API key is missing" }, { status: 500 });
+        }
+
         const formData = await request.formData();
         const prompt = formData.get("prompt") as string;
 
@@ -63,11 +68,6 @@ export async function POST(request: Request) {
 
         if (!VALID_MIME_TYPES.includes(primaryImageFile.type)) {
             return NextResponse.json({ error: "Invalid file type. Only JPG, PNG, and WebP are allowed." }, { status: 415 });
-        }
-
-        const apiKey = process.env.GEMINI_API_KEY || process.env.API_KEY || "";
-        if (!apiKey) {
-            return NextResponse.json({ error: "API key is missing" }, { status: 500 });
         }
 
         const ai = new GoogleGenAI({ apiKey });

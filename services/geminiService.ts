@@ -77,7 +77,10 @@ function constructSystemPrompt(userPrompt: string, charCount: number, ratio: Asp
  */
 export async function generateCharacterImage(prompt: string): Promise<string> {
     try {
-        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        const apiKey = process.env.GEMINI_API_KEY || process.env.API_KEY || "";
+        if (!apiKey) throw new Error("API key is missing");
+
+        const ai = new GoogleGenAI({ apiKey });
         const response = await ai.models.generateContent({
             model: 'gemini-2.5-flash-image',
             contents: {
@@ -127,7 +130,10 @@ export async function generateVideo(
     let operation: any;
 
     try {
-        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        const apiKey = process.env.GEMINI_API_KEY || process.env.API_KEY || "";
+        if (!apiKey) throw new Error("API key is missing");
+
+        const ai = new GoogleGenAI({ apiKey });
         const isMultiCharacter = characterImages.length > 1;
         onProgress(5, LOADING_MESSAGES[0]);
 
@@ -163,7 +169,7 @@ export async function generateVideo(
             await new Promise(resolve => setTimeout(resolve, POLLING_INTERVAL_MS));
 
             // Re-create AI instance to ensure fresh credentials if they were updated mid-flight
-            const pollingAi = new GoogleGenAI({ apiKey: process.env.API_KEY });
+            const pollingAi = new GoogleGenAI({ apiKey });
             operation = await pollingAi.operations.getVideosOperation({ operation });
 
             const progressPercentage = 15 + (progressCount * 5);
@@ -183,7 +189,7 @@ export async function generateVideo(
         }
 
         onProgress(95, "Finalizing video...");
-        const response = await fetch(`${downloadLink}&key=${process.env.API_KEY}`);
+        const response = await fetch(`${downloadLink}&key=${apiKey}`);
         if (!response.ok) throw new Error(`Failed to download video: ${response.statusText}`);
 
         const videoBlob = await response.blob();

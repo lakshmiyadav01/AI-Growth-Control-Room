@@ -34,16 +34,8 @@ export async function POST(req: Request) {
 
     // Call AI Logic
     let parsed;
-    try {
-      const aiResponse = await generateCampaign({ topic, platform, targetAudience, tone });
-      parsed = aiResponse.rawData;
-    } catch (error: unknown) {
-      console.error("AI Generation failed:", error);
-      return NextResponse.json(
-        { error: "Failed to generate or parse AI response" },
-        { status: 500 }
-      );
-    }
+    const aiResponse = await generateCampaign({ topic, platform, targetAudience, tone });
+    parsed = aiResponse.rawData;
 
     if (!parsed || typeof parsed !== "object") {
       return NextResponse.json(
