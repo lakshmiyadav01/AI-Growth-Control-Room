@@ -1,0 +1,70 @@
+﻿
+> ai-growth-control-room@0.1.0 lint
+> eslint
+
+
+C:\Users\ssc\Desktop\vibe-lab\New folder (2)\App.tsx
+  131:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  169:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\ssc\Desktop\vibe-lab\New folder (2)\components\ApiKeySelection.tsx
+  22:106  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  22:120  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  22:137  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\ssc\Desktop\vibe-lab\New folder (2)\components\CharacterCard.tsx
+  15:60  error    Component definition is missing display name                                                                                                                                                                                                                                             react/display-name
+  45:25  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ssc\Desktop\vibe-lab\New folder (2)\components\CharacterCreatorModal.tsx
+  31:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\ssc\Desktop\vibe-lab\New folder (2)\components\PromptEditor.tsx
+  11:58  error  Component definition is missing display name                     react/display-name
+  22:53  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  22:62  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\ssc\Desktop\vibe-lab\New folder (2)\components\SettingsPanel.tsx
+  20:60  error  Component definition is missing display name  react/display-name
+
+C:\Users\ssc\Desktop\vibe-lab\New folder (2)\services\geminiService.ts
+   18:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   18:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  102:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  127:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  195:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\ssc\Desktop\vibe-lab\New folder (2)\src\app\api\generate-video\route.ts
+    2:23  warning  'VideoGenerationReferenceImage' is defined but never used  @typescript-eslint/no-unused-vars
+    2:54  warning  'VideoGenerationReferenceType' is defined but never used   @typescript-eslint/no-unused-vars
+   89:49  error    Unexpected any. Specify a different type                   @typescript-eslint/no-explicit-any
+  103:21  error    Unexpected any. Specify a different type                   @typescript-eslint/no-explicit-any
+
+C:\Users\ssc\Desktop\vibe-lab\New folder (2)\src\components\CampaignResult.tsx
+  195:191  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\ssc\Desktop\vibe-lab\New folder (2)\src\components\Sidebar.tsx
+  77:35  warning  'isNegative' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ssc\Desktop\vibe-lab\New folder (2)\src\components\video\VideoGenerator.tsx
+   3:31  warning  'useRef' is defined but never used        @typescript-eslint/no-unused-vars
+  95:23  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\ssc\Desktop\vibe-lab\New folder (2)\src\middleware.ts
+  27:26  warning  'pending' is assigned a value but never used    @typescript-eslint/no-unused-vars
+  27:35  warning  'limit' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  27:42  warning  'reset' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  27:49  warning  'remaining' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ssc\Desktop\vibe-lab\New folder (2)\test-video.js
+  1:25  error    A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+  2:12  error    A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+  3:1   error    A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+  8:15  warning  'imageBytes' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ssc\Desktop\vibe-lab\New folder (2)\utils\validation.ts
+  27:42  warning  'characterCount' is defined but never used  @typescript-eslint/no-unused-vars
+  27:66  warning  'aspectRatio' is defined but never used     @typescript-eslint/no-unused-vars
+
+Γ£û 35 problems (23 errors, 12 warnings)
+

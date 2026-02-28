@@ -1,0 +1,5 @@
+{
+  "name": "Cinematic AI Video Generator",
+  "description": "An AI-powered application that transforms a single image and a text prompt into a short, cinematic video. Features include various aspect ratios, preset styles, and high-quality video generation.",
+  "requestFramePermissions": []
+}

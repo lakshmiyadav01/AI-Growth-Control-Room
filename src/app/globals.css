@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #111111; /* deep matte charcoal */
+  --color-foreground: #ededed;
+  
+  /* Rose gold palette */
+  --color-rosegold-100: #f5e6e1;
+  --color-rosegold-200: #ecd2c7;
+  --color-rosegold-300: #e6b8a2;
+  --color-rosegold-400: #df9b85;
+  --color-rosegold-500: #d4a373;
+  --color-rosegold-600: #b76e79;
+  --color-rosegold-700: #934c54;
+  --color-rosegold-800: #683038;
+  --color-rosegold-900: #421b21;
+
+  --color-dark-surface: #1a1a1a;
+  --color-dark-border: #333333;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .glassmorphism {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)];
+  }
+  .text-rosegold-gradient {
+    @apply bg-gradient-to-r from-[#d4a373] via-[#e6b8a2] to-[#b76e79] bg-clip-text text-transparent;
+  }
+  .bg-rosegold-gradient {
+    @apply bg-gradient-to-r from-[#d4a373] via-[#e6b8a2] to-[#b76e79];
+  }
+  .border-rosegold {
+    @apply border-[#b76e79]/30 hover:border-[#b76e79]/60 transition-colors duration-300;
+  }
+}
